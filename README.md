@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 
 ## Customize configuration
-We recommend 
+We recommand to edit on a copy of the [`config/example.yml`](https://github.com/JelloXBiotechInc/immunofluorescenceHDR/blob/main/config/example.yml) file for configuring the input/output data location and the parameters of the algorithms, and to edit on a copy  of the [`metadata/example.csv`](https://github.com/JelloXBiotechInc/immunofluorescenceHDR/blob/main/metadata/example.csv) file for organizing the data to be processed.
 
 ## Transform snapshots into HDR images
 With the customized configuration file `config/<config-name>.yml`, run the command below to merge images by the HDR algorithm
