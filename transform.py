@@ -450,14 +450,15 @@ def transform(
     else:
         merged = _transform_whole_image(**kwargs)
     # Output transformed image
-    if save_tiledtiff:
-        write_tiledtiff(
-            merged,
-            savepath,
-            tilesize=datacfg.get('save_tilesize', 512)
-        )
-    else:
-        write_image(merged, savepath)
+    # if save_tiledtiff:
+    #     write_tiledtiff(
+    #         merged,
+    #         savepath,
+    #         tilesize=datacfg.get('save_tilesize', 512)
+    #     )
+    # else:
+    #     write_image(merged, savepath)
+    write_image(merged, savepath)
 
 
 def main(
