@@ -1,0 +1,4 @@
+Image,File,Exposure
+<image-name>,<filename-of-snapshot-1>,<exposure-time-1>
+<image-name>,<filename-of-snapshot-2>,<exposure-time-2>
+<image-name>,<filename-of-snapshot-3>,<exposure-time-3>
