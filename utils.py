@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 import scipy as sp
 from enum import IntEnum
-from mergeregular_to_ometiff import TiffWriter
+# from mergeregular_to_ometiff import TiffWriter
 from skimage.color import hed_from_rgb
 import itertools
 from dataclasses import dataclass, field
@@ -99,12 +99,12 @@ def image_size(imgpath: str) -> Tuple[int, int]:
     return height, width
 
 
-def write_tiledtiff(img: NPAR, filepath: str, tilesize: int) -> None:
-    """Write image to tiled TIFF."""
-    assert os.path.splitext(os.path.basename(filepath))[-1] == '.tif',\
-        'file to save must have .tif extension'
-    writer = TiffWriter(tilesize)
-    writer(img, filepath)
+# def write_tiledtiff(img: NPAR, filepath: str, tilesize: int) -> None:
+#     """Write image to tiled TIFF."""
+#     assert os.path.splitext(os.path.basename(filepath))[-1] == '.tif',\
+#         'file to save must have .tif extension'
+#     writer = TiffWriter(tilesize)
+#     writer(img, filepath)
 
 
 def od_from_rgb(img: NPAR) -> NPAR:
