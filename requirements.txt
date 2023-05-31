@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-image
+opencv-python
+tqdm
+pyyaml
+openslide-python
+jupyter
+glymur
