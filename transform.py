@@ -505,12 +505,12 @@ if __name__ == '__main__':
         action='store_true',
         help='whether to read images by OpenSlide'
     )
-    parser.add_argument(
-        '--tiledtiff',
-        default=False,
-        action='store_true',
-        help='whether to save images as tiled-TIFF'
-    )
+    # parser.add_argument(
+    #     '--tiledtiff',
+    #     default=False,
+    #     action='store_true',
+    #     help='whether to save images as tiled-TIFF'
+    # )
     args = parser.parse_args()
     assert os.path.exists(args.config), 'configuration file not found'
     assert os.path.splitext(args.config)[-1], 'configuration not a .yaml file'
@@ -524,5 +524,5 @@ if __name__ == '__main__':
         modelcfg=config['model'],
         name=cfgname,
         read_openslide=args.openslide,
-        save_tiledtiff=args.tiledtiff,
+        # save_tiledtiff=args.tiledtiff,
     )
