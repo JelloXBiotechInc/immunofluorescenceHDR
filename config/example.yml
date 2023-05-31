@@ -1,0 +1,47 @@
+# Example configuration
+data:
+  datadir: "<directory path to the input images>"
+  savedir: "<directory path to the output HDR images>"
+  # Image metadata
+  metadata: "<path to the metadata .csv file>"
+  imagecol: Image  # column name of images
+  filenamecol: File  # column name of filenames
+  exposurecol: Exposure  # column name of exposures
+  # Fluorescence channel
+  nucleuschn: RED  # channel representing nuclei
+  antibodychn: GREEN  # channel representing antibody marker
+  # OpenSlide supports
+  read_tilesize: 1024  # tile size for image reading; recommended as a power of 2
+  save_tilesize: 512  # tile size to save image as tiled TIFF
+model:
+  dtype: float32
+  # Preprocessing
+  erode_ksize: 5  # kernel size of erosion
+  blur_ksize: 3  # kernel size of Gaussian blurring
+  # Sampling
+  neighborhood_radius: 10  # radius of neighborhood dilation
+  sample_thrsh: 16  # threshold to sample pixels for fitting
+  # Fitting and reconstruction
+  smooth: 100  # smoothing parameter
+  weight_offset:  16  # constant offset of weighting function
+  # Postprocessing
+  background_top_percentage: 0.001  # top percentage to determine background threshold
+  clahe_limit: 3  # parameter for CLAHE
+  clahe_gsize: 8  # parameter for CLAHE
+  gamma_upper: 1.3  # parameter for curved gamma correction
+  gamma_lower: 1  # parameter for curved gamma correction
+  contrast_ksize: 3  # kernel size of contrast enhancement
+  contrast_iters: 2  # number of iterations of contrast enhancement
+convert:
+  savedir: "<directory path to the output pseudo-IHC images>"
+  # Conversion from IF to IHC
+  hematoxylin_rgb: [5, 30, 160]  # custom RGB color representation of hematoxylin
+  gamma_hema: 1  # parameter for gamma correction of hematoxylin
+  factor_hema: 1.55  # scaling parameter of hematoxylin
+  offset_hema: 0  # shifting parameter of hematoxylin
+  gamma_dab: 1  # parameter for gamma correction of DAB
+  factor_dab: 2  # scaling parameter of DAB
+  offset_dab: 0  # shifting parameter of DAB
+  # OpenSlide supports
+  read_tilesize: 1024  # tile size for image reading; recommended as a power of 2
+  save_tilesize: 512  # tile size to save image as tiled TIFF
