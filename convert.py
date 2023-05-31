@@ -226,14 +226,15 @@ def convert(
     else:
         converted = _convert_whole_image(**kwargs)
     # Output the converted image
-    if save_tiledtiff:
-        write_tiledtiff(
-            converted,
-            savepath,
-            tilesize=cvtcfg.get('save_tilesize', 512)
-        )
-    else:
-        write_image(converted, savepath)
+    # if save_tiledtiff:
+    #     write_tiledtiff(
+    #         converted,
+    #         savepath,
+    #         tilesize=cvtcfg.get('save_tilesize', 512)
+    #     )
+    # else:
+    #     write_image(converted, savepath)
+    write_image(converted, savepath)
 
 
 def main(
@@ -275,12 +276,12 @@ if __name__ == '__main__':
         action='store_true',
         help='whether to read images by OpenSlide'
     )
-    parser.add_argument(
-        '--tiledtiff',
-        default=False,
-        action='store_true',
-        help='whether to save images as tiled-TIFF'
-    )
+    # parser.add_argument(
+    #     '--tiledtiff',
+    #     default=False,
+    #     action='store_true',
+    #     help='whether to save images as tiled-TIFF'
+    # )
     args = parser.parse_args()
     assert os.path.exists(args.config), 'configuration file not found'
     assert os.path.splitext(args.config)[-1], 'configuration not a .yaml file'
@@ -294,5 +295,5 @@ if __name__ == '__main__':
         cvtcfg=config['convert'],
         name=cfgname,
         read_openslide=args.openslide,
-        save_tiledtiff=args.tiledtiff,
+        # save_tiledtiff=args.tiledtiff,
     )
